@@ -1,0 +1,24 @@
+diff -up sbsigntools-0.9.1/configure.ac.gnuefi sbsigntools-0.9.1/configure.ac
+--- sbsigntools-0.9.1/configure.ac.gnuefi	2018-02-21 17:48:52.000000000 +0100
++++ sbsigntools-0.9.1/configure.ac	2018-02-22 13:26:50.529433565 +0100
+@@ -70,7 +70,7 @@ AM_CONDITIONAL(TEST_BINARY_FORMAT, [ tes
+ ##
+ # no consistent view of where gnu-efi should dump the efi stuff, so find it
+ ##
+-for path in /lib /lib64 /usr/lib /usr/lib64 /usr/lib32 /lib/efi /lib64/efi /usr/lib/efi /usr/lib64/efi; do
++for path in /lib /lib64 /usr/lib /usr/lib64 /usr/lib32 /lib/efi /lib64/efi /usr/lib/efi /usr/lib64/efi /usr/lib/gnuefi /usr/lib64/gnuefi ; do
+     if test -e $path/crt0-efi-$EFI_ARCH.o; then
+        CRTPATH=$path
+     fi
+diff -up sbsigntools-0.9.1/tests/Makefile.am.gnuefi sbsigntools-0.9.1/tests/Makefile.am
+--- sbsigntools-0.9.1/tests/Makefile.am.gnuefi	2018-02-21 17:48:52.000000000 +0100
++++ sbsigntools-0.9.1/tests/Makefile.am	2018-02-22 13:58:10.297539648 +0100
+@@ -27,7 +27,7 @@ check_SCRIPTS = test-wrapper.sh
+ 		$(FORMAT) $^ $@
+ 
+ .$(OBJEXT).elf:
+-	$(LD) $(EFILDFLAGS) -nostdlib -L $(CRTPATH) -shared -Bsymbolic $(CRTPATH)/crt0-efi-$(EFI_ARCH).o -T elf_$(EFI_ARCH)_efi.lds $< -o $@ -lefi -lgnuefi
++	$(LD) $(EFILDFLAGS) -nostdlib -L $(CRTPATH) -shared -Bsymbolic $(CRTPATH)/crt0-efi-$(EFI_ARCH).o -T elf_$(EFI_ARCH)_efi.lds $< -o $@ @libdir@/libefi.a @libdir@/libgnuefi.a
+ 
+ AM_CFLAGS=-fpic -I/usr/include/efi -I/usr/include/efi/$(EFI_ARCH)
+ 
