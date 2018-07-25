@@ -16,9 +16,9 @@ Patch0:        %{name}-no-git.patch
 Patch1:        %{name}-gnuefi.patch
 # same as gnu-efi
 ExclusiveArch: x86_64 aarch64 %{arm} %{ix86}
-BuildRequires:  gcc
 BuildRequires: automake
 BuildRequires: binutils-devel
+BuildRequires: gcc
 BuildRequires: gnu-efi-devel
 BuildRequires: help2man
 BuildRequires: libuuid-devel
