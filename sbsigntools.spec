@@ -2,7 +2,7 @@
 
 Name:          sbsigntools
 Version:       0.9.1
-Release:       2%{?dist}
+Release:       3%{?dist}
 Summary:       Signing utility for UEFI secure boot
 License:       GPLv3+
 URL:           https://build.opensuse.org/package/show/home:jejb1:UEFI/sbsigntools
@@ -19,7 +19,7 @@ ExclusiveArch: x86_64 aarch64 %{arm} %{ix86}
 BuildRequires: automake
 BuildRequires: binutils-devel
 BuildRequires: gcc
-BuildRequires: gnu-efi-devel
+BuildRequires: gnu-efi-devel >= 3.0.8-3
 BuildRequires: help2man
 BuildRequires: libuuid-devel
 %if %{with check}
@@ -67,6 +67,9 @@ make check
 %{_mandir}/man1/sbverify.1.*
 
 %changelog
+* Wed Jul 25 2018 Dominik Mierzejewski <dominik@greysector.net> - 0.9.1-3
+- fix paths to gnu-efi (work around #1608293)
+
 * Sat Jul 14 2018 Fedora Release Engineering <releng@fedoraproject.org> - 0.9.1-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
 
