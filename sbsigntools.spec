@@ -1,8 +1,8 @@
 %bcond_without check
 
 Name:          sbsigntools
-Version:       0.9.1
-Release:       3%{?dist}
+Version:       0.9.2
+Release:       1%{?dist}
 Summary:       Signing utility for UEFI secure boot
 License:       GPLv3+
 URL:           https://build.opensuse.org/package/show/home:jejb1:UEFI/sbsigntools
@@ -67,6 +67,9 @@ make check
 %{_mandir}/man1/sbverify.1.*
 
 %changelog
+* Thu Feb 28 2019 Dominik Mierzejewski <dominik@greysector.net> - 0.9.2-1
+- update to 0.9.2
+
 * Wed Jul 25 2018 Dominik Mierzejewski <dominik@greysector.net> - 0.9.1-3
 - fix paths to gnu-efi (work around #1608293)
 
