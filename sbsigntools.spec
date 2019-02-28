@@ -1,7 +1,7 @@
 %bcond_without check
 
 Name:          sbsigntools
-Version:       0.9.1
+Version:       0.9.2
 Release:       1%{?dist}
 Summary:       Signing utility for UEFI secure boot
 License:       GPLv3+
@@ -66,6 +66,9 @@ make check
 %{_mandir}/man1/sbverify.1.*
 
 %changelog
+* Thu Feb 28 2019 Dominik Mierzejewski <dominik@greysector.net> - 0.9.2-1
+- update to 0.9.2
+
 * Thu Feb 22 2018 Dominik Mierzejewski <dominik@greysector.net> - 0.9.1-1
 - update to 0.9.1
 - add Fedora gnu-efi libs location to search path
