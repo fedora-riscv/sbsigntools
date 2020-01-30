@@ -2,7 +2,7 @@
 
 Name:          sbsigntools
 Version:       0.9.2
-Release:       2%{?dist}
+Release:       3%{?dist}
 Summary:       Signing utility for UEFI secure boot
 License:       GPLv3+
 URL:           https://build.opensuse.org/package/show/home:jejb1:UEFI/sbsigntools
@@ -67,6 +67,9 @@ make check
 %{_mandir}/man1/sbverify.1.*
 
 %changelog
+* Thu Jan 30 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.9.2-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
+
 * Fri Jul 26 2019 Fedora Release Engineering <releng@fedoraproject.org> - 0.9.2-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
 
