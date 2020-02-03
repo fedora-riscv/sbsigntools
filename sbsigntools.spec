@@ -1,7 +1,7 @@
 %bcond_without check
 
 Name:          sbsigntools
-Version:       0.9.2
+Version:       0.9.3
 Release:       1%{?dist}
 Summary:       Signing utility for UEFI secure boot
 License:       GPLv3+
@@ -28,9 +28,21 @@ BuildRequires: openssl
 BuildRequires: openssl-devel
 Provides: bundled(ccan-array_size)
 Provides: bundled(ccan-build_assert)
+Provides: bundled(ccan-check_type)
+Provides: bundled(ccan-compiler)
+Provides: bundled(ccan-container_of)
 Provides: bundled(ccan-endian)
+Provides: bundled(ccan-failtest)
+Provides: bundled(ccan-hash)
+Provides: bundled(ccan-htable)
+Provides: bundled(ccan-list)
 Provides: bundled(ccan-read_write_all)
+Provides: bundled(ccan-str)
 Provides: bundled(ccan-talloc)
+Provides: bundled(ccan-tcon)
+Provides: bundled(ccan-time)
+Provides: bundled(ccan-tlist)
+Provides: bundled(ccan-typesafe_cb)
 
 %description
 Tools to add signatures to EFI binaries and Drivers.
@@ -67,6 +79,10 @@ make check
 %{_mandir}/man1/sbverify.1.*
 
 %changelog
+* Mon Feb 03 2020 Dominik Mierzejewski <dominik@greysector.net> - 0.9.3-1
+- update to 0.9.3
+- update bundled CCAN components list
+
 * Thu Feb 28 2019 Dominik Mierzejewski <dominik@greysector.net> - 0.9.2-1
 - update to 0.9.2
 
