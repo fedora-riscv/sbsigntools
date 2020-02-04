@@ -12,8 +12,8 @@ tmp=$(mktemp -d)
 
 unset CDPATH
 pwd=$(pwd)
-version=0.9.1
-commit=a631793f2d02ef219b5348eab0ac2ae604ed1269
+version=0.9.3
+commit=fe88da5f66241d959b7aeca7502d401ad88df410
 
 pushd "$tmp"
 git clone git://git.kernel.org/pub/scm/linux/kernel/git/jejb/sbsigntools.git
