@@ -19,7 +19,7 @@ ExclusiveArch: x86_64 aarch64 %{arm} %{ix86}
 BuildRequires: automake
 BuildRequires: binutils-devel
 BuildRequires: gcc
-BuildRequires: gnu-efi-devel >= 3.0.8-3
+BuildRequires: gnu-efi-devel >= 1:3.0.8-3
 BuildRequires: help2man
 BuildRequires: libuuid-devel
 %if %{with check}
@@ -82,6 +82,7 @@ make check
 * Mon Feb 03 2020 Dominik Mierzejewski <dominik@greysector.net> - 0.9.3-1
 - update to 0.9.3
 - update bundled CCAN components list
+- support building with gnu-efi 3.0.11
 
 * Thu Feb 28 2019 Dominik Mierzejewski <dominik@greysector.net> - 0.9.2-1
 - update to 0.9.2
