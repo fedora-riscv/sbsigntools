@@ -1,7 +1,7 @@
 %bcond_without check
 
 Name:          sbsigntools
-Version:       0.9.3
+Version:       0.9.4
 Release:       1%{?dist}
 Summary:       Signing utility for UEFI secure boot
 License:       GPLv3+
@@ -73,12 +73,16 @@ make check
 %{_bindir}/sbvarsign
 %{_bindir}/sbverify
 %{_mandir}/man1/sbattach.1.*
+%{_mandir}/man1/sbkeysync.1.*
 %{_mandir}/man1/sbsiglist.1.*
 %{_mandir}/man1/sbsign.1.*
 %{_mandir}/man1/sbvarsign.1.*
 %{_mandir}/man1/sbverify.1.*
 
 %changelog
+* Fri Jul 03 2020 Dominik Mierzejewski <dominik@greysector.net> - 0.9.4-1
+- update to 0.9.4 (#1846578)
+
 * Mon Feb 03 2020 Dominik Mierzejewski <dominik@greysector.net> - 0.9.3-1
 - update to 0.9.3
 - update bundled CCAN components list
