@@ -2,7 +2,7 @@
 
 Name:          sbsigntools
 Version:       0.9.4
-Release:       2%{?dist}
+Release:       3%{?dist}
 Summary:       Signing utility for UEFI secure boot
 License:       GPLv3+
 URL:           https://build.opensuse.org/package/show/home:jejb1:UEFI/sbsigntools
@@ -14,6 +14,8 @@ Source1:       %{name}-mktarball.sh
 Patch0:        %{name}-no-git.patch
 # add Fedora gnu-efi path and link statically against libefi.a/libgnuefi.a
 Patch1:        %{name}-gnuefi.patch
+# https://bugzilla.redhat.com/show_bug.cgi?id=1955828
+Patch2:        https://git.kernel.org/pub/scm/linux/kernel/git/jejb/sbsigntools.git/patch/?id=f12484869c9590682ac3253d583bf59b890bb826#/f12484869c9590682ac3253d583bf59b890bb826.patch
 # same as gnu-efi
 ExclusiveArch: x86_64 aarch64 %{arm} %{ix86}
 BuildRequires: automake
@@ -80,6 +82,9 @@ make check
 %{_mandir}/man1/sbverify.1.*
 
 %changelog
+* Mon May 17 2021 Dominik Mierzejewski <dominik@greysector.net> - 0.9.4-3
+- don't ignore errors from sbkeysync (fixes rhbz#1955828)
+
 * Wed Jul 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.9.4-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
 
