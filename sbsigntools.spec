@@ -3,7 +3,7 @@
 
 Name:          sbsigntools
 Version:       0.9.5
-Release:       2%{?dist}
+Release:       2.rv64%{?dist}
 Summary:       Signing utility for UEFI secure boot
 License:       GPLv3+
 URL:           https://build.opensuse.org/package/show/home:jejb1:UEFI/sbsigntools
@@ -16,7 +16,7 @@ Patch0:        %{name}-no-git.patch
 # add Fedora gnu-efi path and link statically against libefi.a/libgnuefi.a
 Patch1:        %{name}-gnuefi.patch
 # same as gnu-efi
-ExclusiveArch: x86_64 aarch64 %{arm} %{ix86}
+ExclusiveArch: x86_64 aarch64 %{arm} %{ix86} riscv64
 BuildRequires: make
 BuildRequires: automake
 BuildRequires: binutils-devel
@@ -82,6 +82,9 @@ make check
 %{_mandir}/man1/sbverify.1.*
 
 %changelog
+* Mon Feb 05 2024 Songsong Zhang <U2FsdGVkX1@gmail.com> - 0.9.5-2.rv64
+- Add riscv64 support
+
 * Sat Jul 22 2023 Fedora Release Engineering <releng@fedoraproject.org> - 0.9.5-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_39_Mass_Rebuild
 
